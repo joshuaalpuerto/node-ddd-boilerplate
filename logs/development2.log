@@ -1,7 +1,0 @@
-{"level":"info","message":"::1 - - [18/Sep/2017:13:32:28 +0000] \"GET /docs/swagger-ui.css HTTP/1.1\" 304 -","timestamp":"2017-09-18T13:32:28.879Z"}
-{"level":"info","message":"::1 - - [18/Sep/2017:13:32:28 +0000] \"GET /docs/swagger-ui-standalone-preset.js HTTP/1.1\" 304 -","timestamp":"2017-09-18T13:32:28.911Z"}
-{"level":"info","message":"::1 - - [18/Sep/2017:13:32:29 +0000] \"GET /api/v1/swagger.json HTTP/1.1\" 304 -","timestamp":"2017-09-18T13:32:29.345Z"}
-{"level":"info","message":"::1 - - [18/Sep/2017:13:32:29 +0000] \"GET /docs/favicon-32x32.png HTTP/1.1\" 200 1141","timestamp":"2017-09-18T13:32:29.370Z"}
-{"level":"info","message":"::1 - - [18/Sep/2017:13:32:29 +0000] \"GET /docs/favicon-32x32.png HTTP/1.1\" 304 -","timestamp":"2017-09-18T13:32:29.519Z"}
-{"level":"info","message":"::1 - - [18/Sep/2017:13:32:29 +0000] \"GET /docs/favicon-32x32.png HTTP/1.1\" 304 -","timestamp":"2017-09-18T13:32:29.522Z"}
-{"level":"info","message":"::1 - - [18/Sep/2017:13:32:29 +0000] \"GET /docs/favicon-16x16.png HTTP/1.1\" 304 -","timestamp":"2017-09-18T13:32:29.541Z"}
