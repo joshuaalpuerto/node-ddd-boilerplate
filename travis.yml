@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+ - "node"
+before_install:
+ - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.27.5
+ - export PATH="$HOME/.yarn/bin:$PATH"
+ - yarn --version
+ - npm install -g sequelize-cli
+ - npm install -g standard
+ - npm install -g snazzy
+ - psql -c 'create database node_ddd_test;' -U postgres
+cache: yarn
+services:
+  - postgresql
+install:
+ - yarn
