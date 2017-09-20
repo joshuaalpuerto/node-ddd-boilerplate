@@ -1,0 +1,73 @@
+{
+  "name": "Payroll",
+  "version": "1.0.0",
+  "description": "RESTful api for payroll system",
+  "main": "index.js",
+  "engines": {
+    "node": ">7",
+    "npm": ">4"
+  },
+  "scripts": {
+    "start": "node cluster.js",
+    "test": "standard --verbose | snazzy && npm run migrate:test && npm run test:specs",
+    "test:specs": "cross-env NODE_PATH=. NODE_ENV=test mocha",
+    "db:refresh": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all",
+    "migrate": "sequelize db:migrate",
+    "migrate:test": "sequelize db:migrate --env test",
+    "lint": "standard --verbose | snazzy",
+    "lint:staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": ["lint"]
+  },
+  "pre-commit": "lint:staged",
+  "author": "Joshua C Alpuerto <joshuacalpuerto@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "awilix": "2.7.1",
+    "awilix-express": "0.11.0",
+    "bcrypt": "1.0.3",
+    "body-parser": "1.18.1",
+    "compression": "1.7.0",
+    "cors": "2.8.4",
+    "cross-env": "5.0.5",
+    "dotenv": "4.0.0",
+    "express": "4.15.4",
+    "express-status-monitor": "1.0.0",
+    "faker": "4.1.0",
+    "http-status": "1.0.1",
+    "jsonwebtoken": "8.0.1",
+    "moment": "2.18.1",
+    "moment-timezone": "0.5.13",
+    "morgan": "1.8.2",
+    "passport": "0.4.0",
+    "passport-jwt": "3.0.0",
+    "pg": "7.3.0",
+    "pm2": "2.6.1",
+    "ramda": "0.24.1",
+    "sequelize": "4.8.3",
+    "swagger-jsdoc": "1.7.0",
+    "tcomb": "3.2.23",
+    "winston": "2.3.1"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "lint-staged": "4.2.1",
+    "mocha": "3.5.3",
+    "pre-commit": "1.2.2",
+    "supertest": "3.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "/public/docs"
+    ],
+    "globals": [
+      "request",
+      "app",
+      "expect",
+      "describe",
+      "it",
+      "config"
+    ]
+  }
+}

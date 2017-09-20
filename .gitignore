@@ -1,0 +1,8 @@
+config/database.js
+node_modules
+.env
+npm-debug.*
+.DS_Store
+.vscode
+yarn-error.log
+debug.log
