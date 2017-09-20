@@ -1,5 +1,5 @@
-# Payroll API
-> RESTful api for payroll system
+# Node DDD Boilerplate
+> RESTful api with Domain Driven Design
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 

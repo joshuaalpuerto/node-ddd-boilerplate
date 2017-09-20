@@ -1,4 +1,4 @@
-config/database.js
+logs/*.log
 node_modules
 .env
 npm-debug.*
