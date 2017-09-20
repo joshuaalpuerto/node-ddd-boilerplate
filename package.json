@@ -1,11 +1,12 @@
 {
-  "name": "Payroll",
+  "name": "node-ddd-boilerplate",
   "version": "1.0.0",
-  "description": "RESTful api for payroll system",
+  "description": "RESTful api Domain Driven Design",
   "main": "index.js",
   "engines": {
     "node": ">7",
-    "npm": ">4"
+    "npm": ">4",
+    "yarn": "0.27.5"
   },
   "scripts": {
     "start": "node cluster.js",
@@ -18,7 +19,7 @@
     "lint:staged": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["lint"]
+    "*.js": "lint"
   },
   "pre-commit": "lint:staged",
   "author": "Joshua C Alpuerto <joshuacalpuerto@gmail.com>",
