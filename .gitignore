@@ -1,4 +1,4 @@
-logs/*.log
+*.log
 node_modules
 .env
 npm-debug.*

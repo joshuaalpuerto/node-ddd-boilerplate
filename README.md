@@ -1,6 +1,7 @@
 # Node DDD Boilerplate
 > RESTful api with Domain Driven Design
 
+![Travis CI](https://travis-ci.org/joshuaalpuerto/node-ddd-boilerplate.svg?branch=master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Overview
