@@ -10,7 +10,9 @@
   },
   "scripts": {
     "start": "node cluster.js",
-    "test": "standard --verbose | snazzy && npm run migrate:test && npm run test:specs",
+    "test": "standard --verbose | snazzy && npm run migrate:test && npm run test:cov",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test:cov": "cross-env NODE_PATH=. NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha",
     "test:specs": "cross-env NODE_PATH=. NODE_ENV=test mocha",
     "db:refresh": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all",
     "migrate": "sequelize db:migrate",
@@ -53,8 +55,11 @@
   },
   "devDependencies": {
     "chai": "4.1.2",
+    "coveralls": "2.13.1",
+    "istanbul": "0.4.5",
     "lint-staged": "4.2.1",
     "mocha": "3.5.3",
+    "mocha-lcov-reporter": "1.3.0",
     "pre-commit": "1.2.2",
     "supertest": "3.0.0"
   },
