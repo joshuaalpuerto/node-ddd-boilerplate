@@ -8,6 +8,8 @@ before_install:
  - npm install -g standard
  - npm install -g snazzy
  - psql -c 'create database node_ddd_test;' -U postgres
+after_script:
+ - npm run coveralls
 cache: yarn
 services:
   - postgresql

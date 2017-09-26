@@ -6,3 +6,4 @@ npm-debug.*
 .vscode
 yarn-error.log
 debug.log
+coverage
