@@ -58,7 +58,7 @@ $ CREATE DATABASE node_ddd_test;
 
 ## CLI Tools
 
-- `yarn start` - start the BeCashReady REST API application locally
+- `yarn start` - start the Node-DDD API Boilerplate locally
 - `yarn test` - run Unit tests
 - `yarn db:refresh` - run all migrations and seeds.
 - `standard` - lint codebase using JavaScript Standard Style
