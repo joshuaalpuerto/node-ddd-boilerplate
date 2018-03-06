@@ -1,6 +1,6 @@
 {
   "name": "node-ddd-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "RESTful api Domain Driven Design",
   "main": "index.js",
   "engines": {
