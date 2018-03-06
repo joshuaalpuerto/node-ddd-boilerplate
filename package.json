@@ -4,9 +4,8 @@
   "description": "RESTful api Domain Driven Design",
   "main": "index.js",
   "engines": {
-    "node": ">7",
-    "npm": ">4",
-    "yarn": "0.27.5"
+    "node": ">=9",
+    "npm": ">=5"
   },
   "scripts": {
     "start": "node cluster.js",
