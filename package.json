@@ -19,7 +19,7 @@
     "migrate:test": "sequelize db:migrate --env test",
     "lint": "standard --verbose | snazzy",
     "lint:staged": "lint-staged",
-    "clean": "rm -rf node_modules && npm cache clean --force && npm install"
+    "fresh-install": "rm -rf node_modules && npm cache clean --force && npm install"
   },
   "lint-staged": {
     "*.js": "lint"
