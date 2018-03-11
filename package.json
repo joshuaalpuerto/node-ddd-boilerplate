@@ -13,10 +13,12 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "test:cov": "cross-env NODE_PATH=. NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha",
     "test:specs": "cross-env NODE_PATH=. NODE_ENV=test mocha",
-    "db:refresh": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all",
+    "db:refresh": "sequelize db:migrate:undo:all && sequelize db:migrate",
     "db:refresh-test": "sequelize db:migrate:undo:all --env test && sequelize db:migrate --env test",
     "migrate": "sequelize db:migrate",
     "migrate:test": "sequelize db:migrate --env test",
+    "seed": "cross-env NODE_ENV=development sequelize db:seed:all --seeders-path=./src/infra/sequelize/seeders/development",
+    "seed:test": "cross-env NODE_ENV=development sequelize db:seed:all --env test --seeders-path=./src/infra/sequelize/seeders/development",
     "lint": "standard --verbose | snazzy",
     "lint:staged": "lint-staged",
     "fresh-install": "rm -rf node_modules && npm cache clean --force && npm install"
