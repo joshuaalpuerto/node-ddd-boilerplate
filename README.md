@@ -13,7 +13,7 @@
 1. Clone the repository with `git clone --depth=1 https://github.com/joshuaalpuerto/node-ddd-boilerplate.git`
 2. Install the dependencies with [Yarn](https://yarnpkg.com/en/docs/install/)
 3. Install global dependencies [Application Setup](https://github.com/joshuaalpuerto/node-ddd-boilerplate#application-setup-development)
-4. Create the development and test [databases](https://github.com/joshuaalpuerto/node-ddd-boilerplate#database-setup-development)
+4. Create the development and test [Databases](https://github.com/joshuaalpuerto/node-ddd-boilerplate#database-setup-development)
 5. Run database migrations and seed with `yarn db:refresh`
 6. Run the application in development mode with `yarn start`
 7. Access `http://localhost:<PORT>/api/<VERSION>` and you're ready to go!
@@ -48,7 +48,7 @@ $ CREATE DATABASE node_ddd_test;
 
 ## Overview
 
-- uses Node.js > v7
+- uses Node.js > v9
 - written using ES6
 - uses Yarn for package dependency management
 - uses [JavaScript Standard Style](http://standardjs.com/)
@@ -96,6 +96,35 @@ $ sequelize model:create --name modelname --attributes "text:text, url:string"  
 $ sequelize seed:create     # create seeder
 ```
 
+#### Setting up associations — migration and model files
+**IMPORTANT**: as of `6/23/17` the model file created with the `sequelize db:model` command still initializes a model with an empty `classMethods` object with an `associate` property in the options passed to `sequelize.define` method. **You cannot define associations this way anymore as of Sequelize v4.0.0-1.** This tripped me up for a hot second because the generated model file did not reflect this change, and the fact that support for the old way had been removed is seemingly buried in the changelogs. Don’t make the same mistake I did and be super confused for too long about why associations aren’t working.
+
+```js
+//old way that will be included in your generated model file
+module.exports = function(sequelize, DataTypes) {
+  var nameofmodel = sequelize.define('nameofmodel', {
+    ...model attributes
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
+      }
+    }
+  })
+  return nameofmodel
+};
+//The right way to set associations in model files
+module.exports = function(sequelize, DataTypes) {
+  var nameofmodel = sequelize.define('nameofmodel', {
+    ...model attributes
+  });
+
+  nameofmodel.associate = function (models) {
+    // associations can be defined here
+  };
+  return nameofmodel
+}
+```
 ### Sequelize CLI Documentation
 
 For reference, see: [https://github.com/sequelize/cli](https://github.com/sequelize/cli)
