@@ -197,4 +197,6 @@ Adding `pre-commit` to your project can be helpful to encourage consistency and 
 
 This boilerplate is open to suggestions and contributions, documentation contributions are also important! :)
 
+## License
+MIT License - fork, modify and use however you want.
 
