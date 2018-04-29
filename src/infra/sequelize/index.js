@@ -5,7 +5,10 @@ const Sequelize = require('sequelize')
 module.exports = ({config, basePath}) => {
   const sequelize = new Sequelize(
     config.db.url,
-    config.db
+    //we have to remove the depraction warning
+    //https://github.com/sequelize/sequelize/issues/8417
+    { ...config.db, operatorsAliases: false }
+
   )
 
   const db = {
