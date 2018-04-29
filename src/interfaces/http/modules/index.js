@@ -36,7 +36,7 @@ module.exports = () => {
   const swaggerSpec = swaggerJSDoc(options)
   /**
    * @swagger
-   * response:
+   * responses:
    *   Unauthorized:
    *     description: Unauthorized
    *   BadRequest:

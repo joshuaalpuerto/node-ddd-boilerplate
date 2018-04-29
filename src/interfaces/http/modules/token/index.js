@@ -23,7 +23,7 @@ module.exports = () => {
 
 /**
  * @swagger
- * definition:
+ * definitions:
  *   auth:
  *     properties:
  *       email:
