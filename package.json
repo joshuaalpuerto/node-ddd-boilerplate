@@ -63,6 +63,8 @@
     "lint-staged": "4.2.1",
     "mocha": "3.5.3",
     "mocha-lcov-reporter": "1.3.0",
+    "npm-check-updates": "2.14.2",
+    "npx": "10.2.0",
     "pre-commit": "1.2.2",
     "supertest": "3.0.0"
   },
