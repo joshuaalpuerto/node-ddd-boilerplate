@@ -153,7 +153,6 @@ For reference, see: [https://github.com/sequelize/cli](https://github.com/sequel
 - [Moment-timezone](https://momentjs.com/timezone/) - Parse and display dates in any timezone.
 - [Swagger-ui](https://swagger.io/swagger-ui/) - visualize and interact with the API’s resources without having any of the implementation logic in place.
 - [Swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc)- enables you to integrate Swagger using JSDoc comments in your code. Just add @swagger on top of your DocBlock and declare the meaning of your code in yaml complying to the OpenAPI specification.
-    > We use @1.7.0 since we have issue with the latest version deprecating `difinition`
 
 ### Logging
 - [winston](https://github.com/winstonjs/winston) - a multi-transport async logging library for Node.js. It is designed to be a simple and universal logging library with support for multiple transports. A transport is essentially a storage device for your logs. Each instance of a winston logger can have multiple transports configured at different levels. For example, one may want error logs to be stored in a persistent remote location (like a database), but all logs output to the console or a local file.

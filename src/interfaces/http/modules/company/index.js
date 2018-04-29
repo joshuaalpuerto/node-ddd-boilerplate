@@ -21,7 +21,7 @@ module.exports = () => {
 
 /**
  * @swagger
- * definition:
+ * definitions:
  *   company:
  *     properties:
  *       id:
