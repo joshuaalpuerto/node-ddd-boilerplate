@@ -1,6 +1,6 @@
 {
   "name": "node-ddd-boilerplate",
-  "version": "1.0.1",
+  "version": "0.0.0-development",
   "description": "RESTful api Domain Driven Design",
   "main": "index.js",
   "engines": {
@@ -8,6 +8,7 @@
     "npm": ">=5"
   },
   "scripts": {
+    "gc": "git-cz",
     "start": "node cluster.js",
     "test": "standard --verbose | snazzy && npm run migrate:test && npm run test:cov",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
@@ -21,7 +22,9 @@
     "seed:test": "cross-env NODE_ENV=development sequelize db:seed:all --env test --seeders-path=./src/infra/sequelize/seeders/development",
     "lint": "standard --verbose | snazzy",
     "lint:staged": "lint-staged",
-    "fresh-install": "rm -rf node_modules && npm cache clean --force && npm install"
+    "fresh-install": "rm -rf node_modules && npm cache clean --force && npm install",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "lint-staged": {
     "*.js": "lint"
@@ -58,7 +61,9 @@
   },
   "devDependencies": {
     "chai": "4.1.2",
+    "commitizen": "2.9.6",
     "coveralls": "3.0.0",
+    "cz-conventional-changelog": "2.1.0",
     "istanbul": "1.0.0-alpha.2",
     "lint-staged": "7.0.5",
     "mocha": "5.1.1",
@@ -66,7 +71,9 @@
     "npm-check-updates": "2.14.2",
     "npx": "10.2.0",
     "pre-commit": "1.2.2",
-    "supertest": "3.0.0"
+    "semantic-release": "15.4.1",
+    "supertest": "3.0.0",
+    "travis-deploy-once": "5.0.0"
   },
   "standard": {
     "ignore": [
@@ -79,6 +86,18 @@
       "describe",
       "it",
       "config"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshuaalpuerto/node-ddd-boilerplate.git"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  },
+  "release": {
+    "publish": [
+      "@semantic-release/github"
     ]
   }
 }

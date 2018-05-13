@@ -13,6 +13,8 @@ install:
  - yarn
 after_script:
  - npm run coveralls
+after_success:
+  - npm run travis-deploy-once "npm run semantic-release"
 cache:
   yarn: true
   directories:
