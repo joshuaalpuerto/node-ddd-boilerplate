@@ -71,7 +71,7 @@
     "npm-check-updates": "2.14.2",
     "npx": "10.2.0",
     "pre-commit": "1.2.2",
-    "semantic-release": "15.2.0",
+    "semantic-release": "15.4.1",
     "supertest": "3.0.0",
     "travis-deploy-once": "5.0.0"
   },
