@@ -9,16 +9,15 @@ const { Company } = require('src/domain/company')
 module.exports = ({ companyRepository }) => {
   // code for getting all the items
   const create = ({ body }) => {
-    return new Promise(async (resolve, reject) => {
-      try {
+    return Promise
+      .resolve()
+      .then(() => {
         const company = Company(body)
-        const companyEntity = await companyRepository.create(company)
-
-        resolve(companyEntity)
-      } catch (error) {
-        reject(error)
-      }
-    })
+        return companyRepository.create(company)
+      })
+      .catch((error) => {
+        throw new Error(error)
+      })
   }
 
   return {
