@@ -1,11 +1,16 @@
 /* eslint-env mocha */
-const { repository } = require('test/factory')
+const { compose } = require('ramda')
+const { models, repository } = require('test/factory')
 const userRepository = require('src/infra/repositories/user')
 
 describe('Routes: GET Users', () => {
   const BASE_URI = `/api/${config.version}`
-  const UserModel = repository('users')
-  const UserUseCase = UserModel(userRepository)
+
+  const UserUseCase = compose(
+    repository(userRepository),
+    models
+  )('users')
+
   const signIn = app.resolve('jwt').signin()
   let token
 
