@@ -72,6 +72,8 @@
     "npx": "10.2.0",
     "pre-commit": "1.2.2",
     "semantic-release": "15.4.1",
+    "sinon": "5.0.7",
+    "sinon-chai": "3.0.0",
     "supertest": "3.0.0",
     "travis-deploy-once": "5.0.0"
   },
