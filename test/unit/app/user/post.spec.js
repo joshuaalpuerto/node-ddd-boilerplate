@@ -7,12 +7,12 @@ describe('App -> User -> Post', () => {
 
   describe('Success path', () => {
     beforeEach(() => {
-      const MockUserRepository = {
+      const MockRepository = {
         create: (data) => data
       }
 
       useCase = postUsecase({
-        userRepository: MockUserRepository
+        userRepository: MockRepository
       })
     })
 
@@ -45,13 +45,13 @@ describe('App -> User -> Post', () => {
     }
 
     beforeEach(() => {
-      const MockUserRepository = {
+      const MockRepository = {
         // eslint-disable-next-line prefer-promise-reject-errors
         create: () => Promise.reject('Error')
       }
 
       useCase = postUsecase({
-        userRepository: MockUserRepository
+        userRepository: MockRepository
       })
     })
 

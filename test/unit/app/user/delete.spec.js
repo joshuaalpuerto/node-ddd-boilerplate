@@ -13,13 +13,13 @@ describe('App -> User -> Delete', () => {
 
   describe('Success path', () => {
     beforeEach(() => {
-      const MockUserRepository = {
+      const MockRepository = {
         update: () => {}
       }
 
-      method = sinon.spy(MockUserRepository, 'update')
+      method = sinon.spy(MockRepository, 'update')
       useCase = deleteUsecase({
-        userRepository: MockUserRepository
+        userRepository: MockRepository
       })
     })
 
@@ -32,13 +32,13 @@ describe('App -> User -> Delete', () => {
 
   describe('Fail path', () => {
     beforeEach(() => {
-      const MockUserRepository = {
+      const MockRepository = {
         // eslint-disable-next-line prefer-promise-reject-errors
         update: () => Promise.reject('Error')
       }
 
       useCase = deleteUsecase({
-        userRepository: MockUserRepository
+        userRepository: MockRepository
       })
     })
 

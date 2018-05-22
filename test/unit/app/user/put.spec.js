@@ -22,13 +22,13 @@ describe('App -> User -> Put', () => {
 
   describe('Success path', () => {
     beforeEach(() => {
-      const MockUserRepository = {
+      const MockRepository = {
         update: (data) => data
       }
 
-      method = sinon.spy(MockUserRepository, 'update')
+      method = sinon.spy(MockRepository, 'update')
       useCase = updateUsecase({
-        userRepository: MockUserRepository
+        userRepository: MockRepository
       })
     })
 
@@ -41,13 +41,13 @@ describe('App -> User -> Put', () => {
 
   describe('Fail path', () => {
     beforeEach(() => {
-      const MockUserRepository = {
+      const MockRepository = {
         // eslint-disable-next-line prefer-promise-reject-errors
         update: () => Promise.reject('Error')
       }
 
       useCase = updateUsecase({
-        userRepository: MockUserRepository
+        userRepository: MockRepository
       })
     })
 

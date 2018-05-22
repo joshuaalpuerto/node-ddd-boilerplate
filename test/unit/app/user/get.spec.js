@@ -11,12 +11,12 @@ describe('App -> User -> Get', () => {
 
   describe('Success path', () => {
     beforeEach(() => {
-      const MockUserRepository = {
+      const MockRepository = {
         getAll: () => mockData
       }
 
       useCase = getUsecase({
-        userRepository: MockUserRepository
+        userRepository: MockRepository
       })
     })
 
@@ -28,13 +28,13 @@ describe('App -> User -> Get', () => {
 
   describe('Fail path', () => {
     beforeEach(() => {
-      const MockUserRepository = {
+      const MockRepository = {
         // eslint-disable-next-line prefer-promise-reject-errors
         getAll: () => Promise.reject('Error')
       }
 
       useCase = getUsecase({
-        userRepository: MockUserRepository
+        userRepository: MockRepository
       })
     })
 
