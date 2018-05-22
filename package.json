@@ -85,7 +85,8 @@
       "expect",
       "describe",
       "it",
-      "config"
+      "config",
+      "beforeEach"
     ]
   },
   "repository": {
