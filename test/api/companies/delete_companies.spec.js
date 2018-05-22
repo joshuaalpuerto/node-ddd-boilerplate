@@ -1,15 +1,21 @@
 /* eslint-env mocha */
-const { repository } = require('test/factory')
+const { compose } = require('ramda')
+const { models, repository } = require('test/factory')
 const userRepository = require('src/infra/repositories/user')
 const companyRepository = require('src/infra/repositories/company')
 
 describe('Routes: DELETE Companies', () => {
   const BASE_URI = `/api/${config.version}`
-  const UserModel = repository('users')
-  const UserUseCase = UserModel(userRepository)
 
-  const CompanyModel = repository('companies')
-  const CompanyUseCase = CompanyModel(companyRepository)
+  const UserUseCase = compose(
+    repository(userRepository),
+    models
+  )('users')
+
+  const CompanyUseCase = compose(
+    repository(companyRepository),
+    models
+  )('companies')
 
   const signIn = app.resolve('jwt').signin()
   let token
