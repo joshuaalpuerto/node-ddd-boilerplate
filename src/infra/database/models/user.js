@@ -48,6 +48,10 @@ module.exports = function (sequelize, DataTypes) {
     createdBy: {
       type: DataTypes.UUID,
       allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.UUID,
+      allowNull: true
     }
   }, {
     hooks: {

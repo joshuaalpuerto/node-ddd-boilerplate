@@ -9,7 +9,7 @@ module.exports = ({ companyRepository }) => {
       .then(() =>
         companyRepository.getAll({
           attributes: [
-            'id', 'name', 'address', 'contact', 'tin', 'sss', 'philhealth', 'isDeleted', 'createdBy'
+            'id', 'name', 'address', 'contact', 'tin', 'sss', 'philhealth', 'isDeleted', 'createdBy', 'updatedBy'
           ]
         })
       )

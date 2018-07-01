@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  const User = sequelize.define('companies', {
+  const Company = sequelize.define('companies', {
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
@@ -37,6 +37,10 @@ module.exports = function (sequelize, DataTypes) {
     createdBy: {
       type: DataTypes.UUID,
       allowNull: false
+    },
+    updatedBy: {
+      type: DataTypes.UUID,
+      allowNull: true
     }
   }, {
     freezeTableName: true,
@@ -48,5 +52,5 @@ module.exports = function (sequelize, DataTypes) {
     }
   })
 
-  return User
+  return Company
 }

@@ -13,7 +13,10 @@ const User = t.struct({
   verificationCode: t.maybe(t.String),
   isVerified: t.maybe(t.Number),
   isDeleted: t.Number,
-  createdBy: t.String
+  createdBy: t.maybe(t.String),
+  updatedBy: t.maybe(t.String),
+  createdAt: t.maybe(t.Date),
+  updatedAt: t.maybe(t.Date)
 })
 
 module.exports = compose(
