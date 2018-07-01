@@ -9,7 +9,8 @@ const toEntity = ({
   password,
   roleId,
   isDeleted,
-  createdBy
+  createdBy,
+  updatedBy
 }) => User({
   id,
   firstName,
@@ -19,7 +20,8 @@ const toEntity = ({
   password,
   roleId,
   isDeleted,
-  createdBy
+  createdBy,
+  updatedBy
 })
 
 module.exports = {
