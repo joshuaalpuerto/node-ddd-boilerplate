@@ -40,6 +40,10 @@ module.exports = {
         type: Sequelize.UUID,
         allowNull: false
       },
+      updatedBy: {
+        type: Sequelize.UUID,
+        allowNull: true
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

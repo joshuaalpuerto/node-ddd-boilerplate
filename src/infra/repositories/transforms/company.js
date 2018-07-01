@@ -9,7 +9,8 @@ const toEntity = ({
   sss,
   philhealth,
   isDeleted,
-  createdBy
+  createdBy,
+  updatedBy
 }) => Company({
   id,
   name,
@@ -19,7 +20,8 @@ const toEntity = ({
   sss,
   philhealth,
   isDeleted,
-  createdBy
+  createdBy,
+  updatedBy
 })
 
 module.exports = {

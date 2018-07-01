@@ -11,7 +11,10 @@ const Company = t.struct({
   sss: t.String,
   philhealth: t.String,
   isDeleted: t.Number,
-  createdBy: t.String
+  createdBy: t.maybe(t.String),
+  updatedBy: t.maybe(t.String),
+  createdAt: t.maybe(t.Date),
+  updatedAt: t.maybe(t.Date)
 })
 
 module.exports = compose(
