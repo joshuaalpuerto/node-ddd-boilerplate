@@ -1,4 +1,4 @@
-const { toEntity } = require('./transforms/company')
+const { toEntity } = require('./transform')
 
 module.exports = (model) => {
   const getAll = (...args) =>
