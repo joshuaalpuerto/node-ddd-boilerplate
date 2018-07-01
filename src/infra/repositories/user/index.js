@@ -1,5 +1,5 @@
-const { toEntity } = require('./transforms/user')
-const { comparePassword } = require('../encryption')
+const { toEntity } = require('./transform')
+const { comparePassword } = require('../../encryption')
 
 module.exports = (model) => {
   const getAll = (...args) =>
