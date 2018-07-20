@@ -21,9 +21,30 @@ module.exports = {
       'underscored': true
     }
   },
-  production: process.env.DATABASE_URL,
-  'dialect': 'postgres',
-  'define': {
-    'underscored': true
+  staging: {
+    'url': process.env.DATABASE_URL_STAGING,
+    'dialect': 'postgres',
+    'define': {
+      'underscored': false
+    },
+    'ssl': true,
+    'dialectOptions': {
+      'ssl': {
+        'require': true
+      }
+    }
+  },
+  production: {
+    'url': process.env.DATABASE_URL_PRODUCTION,
+    'dialect': 'postgres',
+    'define': {
+      'underscored': false
+    },
+    'ssl': true,
+    'dialectOptions': {
+      'ssl': {
+        'require': true
+      }
+    }
   }
 }
