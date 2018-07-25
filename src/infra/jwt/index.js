@@ -1,4 +1,10 @@
 const jwt = require('jsonwebtoken')
+const {
+  compose,
+  trim,
+  replace,
+  partialRight
+} = require('ramda')
 
 module.exports = ({ config }) => ({
   signin: (options) => (payload) => {
@@ -11,6 +17,12 @@ module.exports = ({ config }) => ({
   },
   decode: (options) => (token) => {
     const opt = Object.assign({}, options)
-    return jwt.verify(token, opt)
+    const decodeToken = compose(
+      partialRight(jwt.decode, [opt]),
+      trim,
+      replace(/JWT|jwt/g, '')
+    )
+
+    return decodeToken(token)
   }
 })
