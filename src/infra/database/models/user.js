@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     verificationCode: {
       type: DataTypes.STRING,
-      defaultValue: 0
+      defaultValue: ''
     },
     isVerified: {
       type: DataTypes.INTEGER,
