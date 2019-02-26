@@ -10,6 +10,7 @@
   "scripts": {
     "gc": "git-cz",
     "start": "node cluster.js",
+    "start:cc": "codecrumbs -d src -e src/container.js",
     "test": "standard --verbose | snazzy && npm run migrate:test && npm run test:cov",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "test:cov": "cross-env NODE_PATH=. NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --exit",
