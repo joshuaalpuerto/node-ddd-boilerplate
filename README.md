@@ -61,6 +61,7 @@ $ CREATE DATABASE node_ddd_test;
 ## CLI Tools
 
 - `yarn start` - start the Node-DDD API Boilerplate locally
+- `yarn start:cc` - start `codecrumbs` will give you quick overview the structure of the project
 - `yarn test` - run Unit tests
 - `yarn db:refresh` - run all migrations and seeds.
 - `standard` - lint codebase using JavaScript Standard Style
