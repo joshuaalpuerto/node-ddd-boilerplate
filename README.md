@@ -27,8 +27,10 @@ Access `http://localhost:<PORT>/api/<VERSION>` and you're ready to go!
 > http://localhost:4000/api/v1
 
 ### Docker CLI
-- `yarn docker:db:reset` - reset migrations and seeders.
-- `yarn docker:db:refresh-sp` - reset migrations for store procedures.
+- `yarn docker:db:reset` - reset and run all migrations and seeders.
+- `yarn docker:db:refresh` - reset and run all migrations.
+- `yarn docker:db:refresh-test` - reset and run all migrations for test
+- `yarn docker:test` - refreshes test database and run unit and black-box testing.
 
 *...will add more*
 
