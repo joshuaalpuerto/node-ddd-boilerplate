@@ -1,4 +1,4 @@
-const { encryptPassword } = require('../../encryption')
+const { encryptPassword } = require('src/infra/encryption')
 
 module.exports = () => {
   const password = encryptPassword('pass')
