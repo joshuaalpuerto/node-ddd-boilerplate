@@ -6,7 +6,7 @@ if (!fs.existsSync(`logs`)) {
 }
 
 module.exports = ({ config }) => {
-  return new winston.Logger({
+  return new winston.createLogger({
     transports: [
       new winston.transports.Console(),
       new winston.transports.File(Object.assign(
