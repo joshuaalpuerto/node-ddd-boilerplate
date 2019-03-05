@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const Sequelize = require('sequelize')
 
-module.exports = ({config, basePath}) => {
+module.exports = ({ config, basePath }) => {
   const sequelize = new Sequelize(
     config.db.url,
     // we have to remove the depraction warning

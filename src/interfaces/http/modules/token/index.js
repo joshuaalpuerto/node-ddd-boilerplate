@@ -21,7 +21,7 @@ module.exports = () => {
     webToken: jwt
   })
 
-/**
+  /**
  * @swagger
  * definitions:
  *   auth:
@@ -32,7 +32,7 @@ module.exports = () => {
  *         type: string
  */
 
-/**
+  /**
  * @swagger
  * /token:
  *   post:

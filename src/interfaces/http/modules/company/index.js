@@ -19,7 +19,7 @@ module.exports = () => {
   const putUseCase = put({ companyRepository: companyUseCase })
   const deleteUseCase = remove({ companyRepository: companyUseCase })
 
-/**
+  /**
  * @swagger
  * definitions:
  *   company:
@@ -48,7 +48,7 @@ module.exports = () => {
 
   router.use(auth.authenticate())
 
- /**
+  /**
   * @swagger
   * /companies:
   *   get:
@@ -81,7 +81,7 @@ module.exports = () => {
         })
     })
 
-/**
+  /**
  * @swagger
  * /companies:
  *   post:

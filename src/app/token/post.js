@@ -3,7 +3,7 @@
  */
 const Token = require('src/domain/token')
 
- /**
+/**
   * function for getter user.
   */
 module.exports = ({ userRepository, webToken }) => {

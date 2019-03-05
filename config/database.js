@@ -19,7 +19,8 @@ module.exports = {
     'dialect': 'postgres',
     'define': {
       'underscored': true
-    }
+    },
+    logging: false // remove logs
   },
   staging: {
     'url': process.env.DATABASE_URL_STAGING,

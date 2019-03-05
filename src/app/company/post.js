@@ -3,7 +3,7 @@
  */
 const { Company } = require('src/domain/company')
 
- /**
+/**
   * function for getter company.
   */
 module.exports = ({ companyRepository }) => {

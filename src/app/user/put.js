@@ -3,7 +3,7 @@
  */
 const { User } = require('src/domain/user')
 
- /**
+/**
   * function for getter user.
   */
 module.exports = ({ userRepository }) => {

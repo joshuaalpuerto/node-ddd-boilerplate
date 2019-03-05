@@ -19,7 +19,7 @@ module.exports = () => {
   const putUseCase = put({ userRepository: userUseCase })
   const deleteUseCase = remove({ userRepository: userUseCase })
 
-/**
+  /**
  * @swagger
  * definitions:
  *   user:
@@ -46,7 +46,7 @@ module.exports = () => {
 
   router.use(auth.authenticate())
 
-/**
+  /**
  * @swagger
  * /users:
  *   get:
@@ -78,7 +78,7 @@ module.exports = () => {
             Fail(error.message))
         })
     })
-/**
+  /**
  * @swagger
  * /users:
  *   post:

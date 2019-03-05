@@ -1,4 +1,4 @@
- /**
+/**
   * function for getter user.
   */
 module.exports = ({ userRepository }) => {
