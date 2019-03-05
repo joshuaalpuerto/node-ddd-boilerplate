@@ -27,7 +27,9 @@
     "lint:staged": "lint-staged",
     "fresh-install": "rm -rf node_modules && npm cache clean --force && npm install",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "docker:db:reset": "docker-compose run web yarn db:reset",
+    "docker:db:refresh-sp": "docker-compose run web yarn db:refresh"
   },
   "lint-staged": {
     "*.js": "lint"
