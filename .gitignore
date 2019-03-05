@@ -7,3 +7,6 @@ npm-debug.*
 yarn-error.log
 debug.log
 coverage
+
+postgres-data
+redis-data

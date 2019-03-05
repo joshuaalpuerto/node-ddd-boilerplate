@@ -11,7 +11,7 @@
     "gc": "git-cz",
     "start": "node cluster.js",
     "start:cc": "codecrumbs -d src -e src/container.js",
-    "test": "standard --verbose | snazzy && npm run migrate:test && npm run test:cov",
+    "test": "standard --verbose | snazzy && npm run db:refresh-test && npm run test:cov",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "test:cov": "cross-env NODE_PATH=. NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --exit",
     "test:specs": "cross-env NODE_PATH=. NODE_ENV=test mocha --exit",
@@ -27,7 +27,11 @@
     "lint:staged": "lint-staged",
     "fresh-install": "rm -rf node_modules && npm cache clean --force && npm install",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "docker:db:reset": "docker-compose run web yarn db:reset",
+    "docker:db:refresh": "docker-compose run web yarn db:refresh",
+    "docker:db:refresh-test": "docker-compose run web yarn db:refresh",
+    "docker:test": "docker-compose run web yarn test"
   },
   "lint-staged": {
     "*.js": "lint"

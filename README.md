@@ -9,6 +9,30 @@
 ![Dev Dependecies](https://david-dm.org/joshuaalpuerto/node-ddd-boilerplate/dev-status.svg)
 [![Coverage Status](https://coveralls.io/repos/github/joshuaalpuerto/node-ddd-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/joshuaalpuerto/node-ddd-boilerplate?branch=master)
 
+## Development Environment Setup
+
+1.  Make sure you have `nvm`, node `v10.7` or `LTS` version of node installed
+2.  Install `yarn` - `npm install -g yarn`.
+3.  Use a smart `.npmrc`. By default, `npm` doesn’t save installed dependencies to package.json (and you should always track your dependencies!).
+
+## Docker support
+
+**Prerequisites**
+1. [Docker](https://www.docker.com/products/docker-engine) Community Edition v17 or higher
+
+```sh
+$ docker-compose up -d
+```
+Access `http://localhost:<PORT>/api/<VERSION>` and you're ready to go!
+> http://localhost:4000/api/v1
+
+### Docker CLI
+- `yarn docker:db:reset` - reset and run all migrations and seeders.
+- `yarn docker:db:refresh` - reset and run all migrations.
+- `yarn docker:db:refresh-test` - reset and run all migrations for test
+- `yarn docker:test` - refreshes test database and run unit and black-box testing.
+
+*...will add more*
 
 ## Quick Start
 
@@ -63,7 +87,8 @@ $ CREATE DATABASE node_ddd_test;
 - `yarn start` - start the Node-DDD API Boilerplate locally
 - `yarn start:cc` - start `codecrumbs` will give you quick overview the structure of the project
 - `yarn test` - run Unit tests
-- `yarn db:refresh` - run all migrations and seeds.
+- `yarn db:reset` - run all migrations and seeds.
+- `yarn db:refresh` - run all migrations.
 - `standard` - lint codebase using JavaScript Standard Style
 - `standard --fix` - fix code according to JS Standard Style
 - `sequelize model:create --name newmodel` --attributes "id:integer, title:string - create a new model
