@@ -3,7 +3,7 @@
  */
 const { curry } = require('ramda')
 
- // we will call each repo on thier test  cases  here we will just compose the items.
+// we will call each repo on thier test  cases  here we will just compose the items.
 
 const models = (name) => app.resolve('database').models[name]
 

@@ -2,7 +2,7 @@
  * this file will hold all the get use-case for user domain
  */
 const { User } = require('src/domain/user')
- /**
+/**
   * function for getter user.
   */
 module.exports = ({ userRepository }) => {

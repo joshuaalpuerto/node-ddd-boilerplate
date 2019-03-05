@@ -23,6 +23,7 @@
     "seed": "cross-env NODE_ENV=development NODE_PATH=. sequelize db:seed:all --seeders-path=./src/infra/sequelize/seeders/development",
     "seed:test": "cross-env NODE_ENV=development sequelize db:seed:all --env test --seeders-path=./src/infra/sequelize/seeders/development",
     "lint": "standard --verbose | snazzy",
+    "lint:fix": "standard --fix",
     "lint:staged": "lint-staged",
     "fresh-install": "rm -rf node_modules && npm cache clean --force && npm install",
     "travis-deploy-once": "travis-deploy-once",
@@ -62,6 +63,7 @@
     "winston": "3.2.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "chai": "4.2.0",
     "codecrumbs": "1.1.5",
     "commitizen": "3.0.7",
@@ -77,6 +79,8 @@
     "sequelize-cli": "^5.4.0",
     "sinon": "7.2.7",
     "sinon-chai": "3.3.0",
+    "snazzy": "^8.0.0",
+    "standard": "^12.0.1",
     "supertest": "3.4.2",
     "travis-deploy-once": "5.0.11"
   },

@@ -18,7 +18,7 @@ describe('Routes: DELETE Users', () => {
   beforeEach((done) => {
     // we need to add user before we can request our token
     UserUseCase
-      .destroy({where: {}})
+      .destroy({ where: {} })
       .then(() =>
         UserUseCase.create({
           firstName: 'Test',
@@ -46,22 +46,22 @@ describe('Routes: DELETE Users', () => {
   describe('Should DELETE users', () => {
     it('should delete user', (done) => {
       request.delete(`${BASE_URI}/users/${userId}`)
-      .set('Authorization', `JWT ${token}`)
-      .expect(200)
-      .end((err, res) => {
-        expect(res.body.success).to.eql(true)
+        .set('Authorization', `JWT ${token}`)
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body.success).to.eql(true)
 
-        done(err)
-      })
+          done(err)
+        })
     })
 
     it('should return unauthorized if no token', (done) => {
       request.delete(`${BASE_URI}/users/${userId}`)
-      .expect(401)
-      .end((err, res) => {
-        expect(res.text).to.equals('Unauthorized')
-        done(err)
-      })
+        .expect(401)
+        .end((err, res) => {
+          expect(res.text).to.equals('Unauthorized')
+          done(err)
+        })
     })
   })
 })

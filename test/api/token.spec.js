@@ -14,7 +14,7 @@ describe('Routes: Login', () => {
   beforeEach((done) => {
     // we need to add user before we can request our token
     UserUseCase
-      .destroy({where: {}})
+      .destroy({ where: {} })
       .then(() =>
         UserUseCase.create({
           firstName: 'Test',

@@ -23,7 +23,7 @@ describe('Routes: GET Users', () => {
   beforeEach((done) => {
     // we need to add user before we can request our token
     UserUseCase
-      .destroy({where: {}})
+      .destroy({ where: {} })
       .then(() =>
         UserUseCase.create({
           firstName: 'Test',
@@ -50,7 +50,7 @@ describe('Routes: GET Users', () => {
   describe('Should return companies', () => {
     beforeEach((done) => {
       CompanyUseCase
-        .destroy({where: {}})
+        .destroy({ where: {} })
         .then(() =>
           CompanyUseCase.create({
             'name': 'My Company Test',
@@ -68,21 +68,21 @@ describe('Routes: GET Users', () => {
 
     it('should return all companies', (done) => {
       request.get(`${BASE_URI}/companies`)
-      .set('Authorization', `JWT ${token}`)
-      .expect(200)
-      .end((err, res) => {
-        expect(res.body.data).to.have.length(1)
-        done(err)
-      })
+        .set('Authorization', `JWT ${token}`)
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body.data).to.have.length(1)
+          done(err)
+        })
     })
 
     it('should return unauthorized if no token', (done) => {
       request.get(`${BASE_URI}/companies`)
-      .expect(401)
-      .end((err, res) => {
-        expect(res.text).to.equals('Unauthorized')
-        done(err)
-      })
+        .expect(401)
+        .end((err, res) => {
+          expect(res.text).to.equals('Unauthorized')
+          done(err)
+        })
     })
   })
 })

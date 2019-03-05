@@ -1,4 +1,4 @@
- /**
+/**
   * function for getter company.
   */
 module.exports = ({ companyRepository }) => {

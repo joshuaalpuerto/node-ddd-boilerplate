@@ -17,7 +17,7 @@ describe('Routes: GET Users', () => {
   beforeEach((done) => {
     // we need to add user before we can request our token
     UserUseCase
-      .destroy({where: {}})
+      .destroy({ where: {} })
       .then(() =>
         UserUseCase.create({
           firstName: 'Test',
@@ -55,21 +55,21 @@ describe('Routes: GET Users', () => {
   describe('Should return users', () => {
     it('should return all users', (done) => {
       request.get(`${BASE_URI}/users`)
-      .set('Authorization', `JWT ${token}`)
-      .expect(200)
-      .end((err, res) => {
-        expect(res.body.data).to.have.length(2)
-        done(err)
-      })
+        .set('Authorization', `JWT ${token}`)
+        .expect(200)
+        .end((err, res) => {
+          expect(res.body.data).to.have.length(2)
+          done(err)
+        })
     })
 
     it('should return unauthorized if no token', (done) => {
       request.get(`${BASE_URI}/users`)
-      .expect(401)
-      .end((err, res) => {
-        expect(res.text).to.equals('Unauthorized')
-        done(err)
-      })
+        .expect(401)
+        .end((err, res) => {
+          expect(res.text).to.equals('Unauthorized')
+          done(err)
+        })
     })
   })
 })

@@ -57,7 +57,7 @@ module.exports = () => {
    *         description: API Status
    */
   router.get('/', (req, res) => {
-    res.status(Status.OK).json({status: 'API working'})
+    res.status(Status.OK).json({ status: 'API working' })
   })
 
   router.get('/swagger.json', (req, res) => {

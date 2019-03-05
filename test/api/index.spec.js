@@ -7,7 +7,7 @@ describe('Routes: Index', () => {
       request.get(`${BASE_URI}/`)
         .expect(200)
         .end((err, res) => {
-          const expected = {status: 'API working'}
+          const expected = { status: 'API working' }
           expect(res.body).to.eql(expected)
           done(err)
         })
