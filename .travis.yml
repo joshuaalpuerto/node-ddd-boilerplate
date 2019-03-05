@@ -2,12 +2,7 @@ language: node_js
 node_js:
  - "node"
 before_install:
- - npm install -g yarn@0.27.5
- - yarn --version
- - npm install -g sequelize-cli
- - npm install -g standard@10.0.3
- - npm install -g babel-eslint@8.0.3
- - npm install -g snazzy
+ - npm install -g yarn
  - psql -c 'create database node_ddd_test;' -U postgres
 install:
  - yarn
