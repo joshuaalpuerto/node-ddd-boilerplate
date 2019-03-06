@@ -10,6 +10,7 @@
   "scripts": {
     "gc": "git-cz",
     "start": "node cluster.js",
+    "start:dev": "nodemon cluster.js",
     "start:cc": "codecrumbs -d src -e src/container.js",
     "test": "standard --verbose | snazzy && npm run db:refresh-test && npm run test:cov",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
@@ -56,6 +57,7 @@
     "moment": "2.24.0",
     "moment-timezone": "0.5.23",
     "morgan": "1.9.1",
+    "nodemon": "1.18.10",
     "passport": "0.4.0",
     "passport-jwt": "4.0.0",
     "pg": "7.8.1",
