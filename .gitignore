@@ -10,3 +10,5 @@ coverage
 
 postgres-data
 redis-data
+
+package-lock.json
