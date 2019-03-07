@@ -84,17 +84,18 @@ $ CREATE DATABASE node_ddd_test;
 
 ## CLI Tools
 
-- `yarn start` - start the Node-DDD API Boilerplate locally
+- `yarn start` - start the Node-DDD API Boilerplate for production
+- `yarn start:dev` - start the Node-DDD API Boilerplate locally/development
 - `yarn start:cc` - start `codecrumbs` will give you quick overview the structure of the project
 - `yarn test` - run Unit tests
 - `yarn db:reset` - run all migrations and seeds.
 - `yarn db:refresh` - run all migrations.
-- `standard` - lint codebase using JavaScript Standard Style
-- `standard --fix` - fix code according to JS Standard Style
-- `sequelize model:create --name newmodel` --attributes "id:integer, title:string - create a new model
-- `sequelize db:migrate` - apply db changes using migration script
+- `yarn lint` - lint codebase using JavaScript Standard Style
+- `yarn lint:fix` - fix code according to JS Standard Style
+- `yarn migrate` - apply db changes using migration script
 - `yarn add <package-name>` - add a new package to package.json
 - `yarn remove <package-name>` - remove package from package.json
+- `npx sequelize model:create --name newmodel` --attributes "id:integer, title:string - create a new model
 
 ## Using Sequelize
 
@@ -123,6 +124,8 @@ $ sequelize  db:seed:undo:all       Deletes data from the database.
 $ sequelize model:create --name modelname --attributes "text:text, url:string"  # create model
 $ sequelize seed:create     # create seeder
 ```
+
+> If you did not install your sequelize-cli globally you can run this commands by `npx`
 
 #### Setting up associations — migration and model files
 **IMPORTANT**: as of `6/23/17` the model file created with the `sequelize db:model` command still initializes a model with an empty `classMethods` object with an `associate` property in the options passed to `sequelize.define` method. **You cannot define associations this way anymore as of Sequelize v4.0.0-1.** This tripped me up for a hot second because the generated model file did not reflect this change, and the fact that support for the old way had been removed is seemingly buried in the changelogs. Don’t make the same mistake I did and be super confused for too long about why associations aren’t working.
@@ -162,6 +165,7 @@ For reference, see: [https://github.com/sequelize/cli](https://github.com/sequel
 - [Express](https://expressjs.com/) - Node Framweork
 - [Awilix](https://github.com/jeffijoe/awilix) - dependency resolution support powered by `Proxy`
 - [PM2](https://github.com/Unitech/pm2) - production process manager for Node.js applications with a built-in load balancer
+- [Nodemon](https://nodemon.io/) - Use for development file reload.
 - [Tcomb](https://github.com/gcanti/tcomb) - s a library for Node.js and the browser which allows you to check the types of JavaScript values at runtime with a simple and concise syntax
 - [Express-status-monitor](https://github.com/RafalWilinski/express-status-monitor) - Simple, self-hosted module based on Socket.io and Chart.js to report realtime server metrics for Express-based node servers.
 - [CORS](https://github.com/expressjs/cors) - a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
