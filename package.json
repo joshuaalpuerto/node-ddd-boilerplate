@@ -115,5 +115,9 @@
     "publish": [
       "@semantic-release/github"
     ]
+  },
+  "nodemonConfig": {
+    "ignore": ["test/*", "logs/*", "redis-data/*", "postgres-data/*", "coverage/*"],
+    "delay": "1000"
   }
 }
