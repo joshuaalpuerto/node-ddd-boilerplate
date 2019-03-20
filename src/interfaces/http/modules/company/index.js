@@ -1,23 +1,18 @@
 const { Router } = require('express')
 const Status = require('http-status')
 const container = require('src/container') // we have to get the DI
-const companyRepository = require('src/infra/repositories/company')
 const { get, post, put, remove } = require('src/app/company')
-const { compose } = require('ramda')
 
 module.exports = () => {
   const router = Router()
-  const { database, logger, auth, response: { Success, Fail } } = container.cradle
-
-  const companyModel = database.models.companies
-  const companyUseCase = compose(
+  const { repository: {
     companyRepository
-  )({ model: companyModel })
+  }, logger, auth, response: { Success, Fail } } = container.cradle
 
-  const getUseCase = get({ companyRepository: companyUseCase })
-  const postUseCase = post({ companyRepository: companyUseCase })
-  const putUseCase = put({ companyRepository: companyUseCase })
-  const deleteUseCase = remove({ companyRepository: companyUseCase })
+  const getUseCase = get({ companyRepository })
+  const postUseCase = post({ companyRepository })
+  const putUseCase = put({ companyRepository })
+  const deleteUseCase = remove({ companyRepository })
 
   /**
  * @swagger
