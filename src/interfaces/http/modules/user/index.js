@@ -12,7 +12,7 @@ module.exports = () => {
   const userModel = database.models.users
   const userUseCase = compose(
     userRepository
-  )(userModel)
+  )({ model: userModel })
 
   const getUseCase = get({ userRepository: userUseCase })
   const postUseCase = post({ userRepository: userUseCase })

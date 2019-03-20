@@ -12,7 +12,7 @@ module.exports = () => {
   const companyModel = database.models.companies
   const companyUseCase = compose(
     companyRepository
-  )(companyModel)
+  )({ model: companyModel })
 
   const getUseCase = get({ companyRepository: companyUseCase })
   const postUseCase = post({ companyRepository: companyUseCase })
