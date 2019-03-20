@@ -1,15 +1,11 @@
 /* eslint-env mocha */
-const { compose } = require('ramda')
-const { models, repository } = require('test/factory')
-const userRepository = require('src/infra/repositories/user')
+
+const {
+  userRepository
+} = app.resolve('repository')
 
 describe('Routes: PUT Users', () => {
   const BASE_URI = `/api/${config.version}`
-
-  const UserUseCase = compose(
-    repository(userRepository),
-    models
-  )('users')
 
   const signIn = app.resolve('jwt').signin()
   let token
@@ -17,10 +13,10 @@ describe('Routes: PUT Users', () => {
 
   beforeEach((done) => {
     // we need to add user before we can request our token
-    UserUseCase
+    userRepository
       .destroy({ where: {} })
       .then(() =>
-        UserUseCase.create({
+        userRepository.create({
           firstName: 'Test',
           lastName: 'Dev',
           middleName: 'Super Dev',
