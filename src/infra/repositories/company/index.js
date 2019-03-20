@@ -1,6 +1,6 @@
 const { toEntity } = require('./transform')
 
-module.exports = (model) => {
+module.exports = ({ model }) => {
   const getAll = (...args) =>
     model.findAll(...args).then((entity) =>
       entity.map((data) => {

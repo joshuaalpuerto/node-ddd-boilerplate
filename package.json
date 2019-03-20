@@ -29,10 +29,12 @@
     "fresh-install": "rm -rf node_modules && npm cache clean --force && npm install",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release",
-    "docker:db:reset": "docker-compose run web yarn db:reset",
-    "docker:db:refresh": "docker-compose run web yarn db:refresh",
-    "docker:db:refresh-test": "docker-compose run web yarn db:refresh",
-    "docker:test": "docker-compose run web yarn test"
+    "docker:script": "docker-compose run --rm web",
+    "docker:db:reset": "npm run docker:script yarn db:reset",
+    "docker:db:refresh": "npm run docker:script yarn db:refresh",
+    "docker:db:refresh-test": "npm run docker:script yarn db:refresh",
+    "docker:test": "npm run docker:script yarn test",
+    "docker:test:specs": "npm run docker:script npm run test:specs"
   },
   "lint-staged": {
     "*.js": "lint"
