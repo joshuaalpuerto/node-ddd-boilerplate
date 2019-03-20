@@ -8,9 +8,9 @@ module.exports = () => {
   // swagger definition
   const swaggerDefinition = {
     info: {
-      title: 'Payroll API Explorer',
+      title: 'Node DDD API Explorer',
       version: '1.0.0',
-      description: 'Available REST Endpoints of Payroll RESTful API'
+      description: 'Available REST Endpoints of Node DDD RESTful API'
     },
     host: `${process.env.API_SWAGGER}:${process.env.PORT}/api/${process.env.APP_VERSION}`,
     basePath: '/',
