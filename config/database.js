@@ -9,25 +9,16 @@ require('dotenv').config({ path: dotEnvPath })
 module.exports = {
   development: {
     'url': process.env.DATABASE_URL,
-    'dialect': 'postgres',
-    'define': {
-      'underscored': true
-    }
+    'dialect': 'postgres'
   },
   test: {
     'url': process.env.DATABASE_URL_TEST,
     'dialect': 'postgres',
-    'define': {
-      'underscored': true
-    },
     logging: false // remove logs
   },
   staging: {
     'url': process.env.DATABASE_URL_STAGING,
     'dialect': 'postgres',
-    'define': {
-      'underscored': false
-    },
     'ssl': true,
     'dialectOptions': {
       'ssl': {
@@ -38,9 +29,6 @@ module.exports = {
   production: {
     'url': process.env.DATABASE_URL_PRODUCTION,
     'dialect': 'postgres',
-    'define': {
-      'underscored': false
-    },
     'ssl': true,
     'dialectOptions': {
       'ssl': {
