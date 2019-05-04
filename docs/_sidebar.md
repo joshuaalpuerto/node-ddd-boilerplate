@@ -1,0 +1,18 @@
+- General
+  - [Introduction](/)
+  - [CLI Commands](general/js-standard.md)
+  - [Authentication](general/css-standard.md)
+  - [Coding Standard](general/react-standard.md)
+- Setup
+  - [Config](styling/stylesheet.md)
+  - [Database Setup](styling/styled-component.md)
+  - [Logging](styling/styled-component.md)
+- Organization and Architecture
+  - [Paths and Require](testing/index.md)
+  - [Folder Structure](testing/unit-testing.md)
+  - [Patterns recommendations and operations](testing/component-testing.md)
+  - [Dependency injection container]()
+- Testing
+  - [Testing](styling/stylesheet.md)
+  - [Unit Testing](styling/styled-component.md)
+  - [Black box](styling/styled-component.md)
