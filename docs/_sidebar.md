@@ -1,8 +1,8 @@
 - General
   - [Introduction](/)
-  - [CLI Commands](general/js-standard.md)
-  - [Authentication](general/css-standard.md)
-  - [Coding Standard](general/react-standard.md)
+  - [CLI Commands](general/cli-commands.md)
+  - [Authentication](general/authentication.md)
+  - [Coding Standard](general/coding-standard.md)
 - Setup
   - [Config](styling/stylesheet.md)
   - [Database Setup](styling/styled-component.md)
