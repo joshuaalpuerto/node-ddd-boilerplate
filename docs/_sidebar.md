@@ -8,10 +8,10 @@
   - [Database Setup](setup/database.md)
   - [Logging](setup/logging.md)
 - Organization and Architecture
-  - [Paths and Require](testing/index.md)
-  - [Folder Structure](testing/unit-testing.md)
-  - [Patterns recommendations and operations](testing/component-testing.md)
-  - [Dependency injection container]()
+  - [Paths and Require](organization-architecture/paths-require.md)
+  - [Folder Structure](organization-architecture/folder-structure.md)
+  - [Patterns recommendations and operations](organization-architecture/recommendation.md)
+  - [Dependency injection container](organization-architecture/di-container.md)
 - Testing
   - [Testing](styling/stylesheet.md)
   - [Unit Testing](styling/styled-component.md)
