@@ -13,6 +13,6 @@
   - [Patterns recommendations and operations](organization-architecture/recommendation.md)
   - [Dependency injection container](organization-architecture/di-container.md)
 - Testing
-  - [Testing](styling/stylesheet.md)
-  - [Unit Testing](styling/styled-component.md)
-  - [Black box](styling/styled-component.md)
+  - [Testing](testing/testing.md)
+  - [Unit Testing](testing/unit-testing.md)
+  - [Black box](testing/black-box.md)
