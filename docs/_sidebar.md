@@ -4,9 +4,9 @@
   - [Authentication](general/authentication.md)
   - [Coding Standard](general/coding-standard.md)
 - Setup
-  - [Config](styling/stylesheet.md)
-  - [Database Setup](styling/styled-component.md)
-  - [Logging](styling/styled-component.md)
+  - [Config](setup/config.md)
+  - [Database Setup](setup/database.md)
+  - [Logging](setup/logging.md)
 - Organization and Architecture
   - [Paths and Require](testing/index.md)
   - [Folder Structure](testing/unit-testing.md)
