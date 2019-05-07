@@ -12,6 +12,7 @@
     "start": "node cluster.js",
     "start:dev": "nodemon cluster.js",
     "start:cc": "codecrumbs -d src -e src/container.js",
+    "start:docs": "docsify serve docs",
     "test": "standard --verbose | snazzy && npm run db:refresh-test && npm run test:cov",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "test:cov": "cross-env NODE_PATH=. NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --exit",
@@ -45,7 +46,7 @@
   "dependencies": {
     "awilix": "4.2.0",
     "awilix-express": "2.1.1",
-    "bcrypt": "3.0.4",
+    "bcrypt": "3.0.6",
     "body-parser": "1.18.3",
     "compression": "1.7.3",
     "cors": "2.8.5",
@@ -77,6 +78,7 @@
     "commitizen": "3.0.7",
     "coveralls": "3.0.3",
     "cz-conventional-changelog": "2.1.0",
+    "docsify-cli": "4.3.0",
     "istanbul": "1.1.0-alpha.1",
     "lint-staged": "8.1.5",
     "mocha": "6.0.2",
@@ -119,7 +121,13 @@
     ]
   },
   "nodemonConfig": {
-    "ignore": ["test/*", "logs/*", "redis-data/*", "postgres-data/*", "coverage/*"],
+    "ignore": [
+      "test/*",
+      "logs/*",
+      "redis-data/*",
+      "postgres-data/*",
+      "coverage/*"
+    ],
     "delay": "1000"
   }
 }
