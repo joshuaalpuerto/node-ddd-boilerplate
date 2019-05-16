@@ -7,7 +7,7 @@ module.exports = ({ config, basePath }) => {
     config.db.url,
     // we have to remove the depraction warning
     // https://github.com/sequelize/sequelize/issues/8417
-    { ...config.db, operatorsAliases: false }
+    { ...config.db }
 
   )
 
