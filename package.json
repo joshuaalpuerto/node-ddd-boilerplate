@@ -129,5 +129,9 @@
       "coverage/*"
     ],
     "delay": "1000"
+  },
+  "resolutions": {
+    "axios": "0.18.1",
+    "fstream": "1.0.12"
   }
 }
