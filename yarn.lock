@@ -11146,10 +11146,10 @@ send@0.17.1:
     chainsaw ">=0.0.7 <0.1"
     hashish ">=0.0.2 <0.1"
 
-sequelize-cli@^5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/sequelize-cli/-/sequelize-cli-5.4.0.tgz#6a2c2af331466414d8b2ecb6912e24d2de0d04b5"
-  integrity sha512-4Gvl0yH0T3hhSdiiOci3+IKIfVG9x2os0hGWsbfa8QuyGgk9mZOqgTBnSCRtuxsdAyzUix9kfcTnfNolVNtprg==
+sequelize-cli@^5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/sequelize-cli/-/sequelize-cli-5.5.0.tgz#b0570352f70eaa489a25dccf55cf316675d6ff06"
+  integrity sha512-twVQ02alCpr2XvxNmpi32C48WZs6xHTH1OFTfTS5Meg3BVqOM8ghiZoml4FITFjlD8sAJSQjlAHTwqTbuolA6Q==
   dependencies:
     bluebird "^3.5.3"
     cli-color "^1.4.0"
@@ -11158,7 +11158,7 @@ sequelize-cli@^5.4.0:
     lodash "^4.17.5"
     resolve "^1.5.0"
     umzug "^2.1.0"
-    yargs "^12.0.5"
+    yargs "^13.1.0"
 
 sequelize-pool@^1.0.2:
   version "1.0.2"
