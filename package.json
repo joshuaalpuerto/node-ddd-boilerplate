@@ -86,7 +86,7 @@
     "npm-check": "5.9.0",
     "pre-commit": "1.2.2",
     "semantic-release": "15.13.15",
-    "sequelize-cli": "^5.5.0",
+    "sequelize-cli": "^5.5.1",
     "sinon": "7.2.7",
     "sinon-chai": "3.3.0",
     "snazzy": "^8.0.0",
