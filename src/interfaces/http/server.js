@@ -1,6 +1,16 @@
 const express = require('express')
+const { createTerminus, HealthCheckError } = require('@godaddy/terminus')
 
-module.exports = ({ config, router, logger, auth }) => {
+// Healthchecks
+const readinessProbe = ({ http, database }) => async () => {
+  const isServerListening = http.listening
+  const isDBConnected = await database.authenticate()
+  if (!isDBConnected || !isServerListening) {
+    throw HealthCheckError
+  }
+}
+
+module.exports = ({ config, router, logger, auth, database }) => {
   const app = express()
 
   app.disable('x-powered-by')
@@ -12,11 +22,21 @@ module.exports = ({ config, router, logger, auth }) => {
 
   return {
     app,
-    start: () => new Promise((resolve) => {
-      const http = app.listen(config.port, () => {
-        const { port } = http.address()
-        logger.info(`🤘 API - Port ${port}`)
+    start: () =>
+      new Promise(resolve => {
+        const terminusOptions = {
+          healthChecks: {
+            '/livez': () => {},
+            '/readyz': readinessProbe({ app, database })
+          }
+        }
+
+        createTerminus(app, terminusOptions)
+
+        const http = app.listen(config.port, () => {
+          const { port } = http.address()
+          logger.info(`🤘 API - Port ${port}`)
+        })
       })
-    })
   }
 }
