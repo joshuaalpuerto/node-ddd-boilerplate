@@ -7,6 +7,7 @@
   - [Config](setup/config.md)
   - [Database Setup](setup/database.md)
   - [Logging](setup/logging.md)
+  - [Upgrading](setup/upgrading.md)
 - Organization and Architecture
   - [Paths and Require](organization-architecture/paths-require.md)
   - [Folder Structure](organization-architecture/folder-structure.md)
