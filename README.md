@@ -17,6 +17,12 @@
 2.  Install `yarn` - `npm install -g yarn`.
 3.  Use a smart `.npmrc`. By default, `npm` doesn’t save installed dependencies to package.json (and you should always track your dependencies!).
 
+### NOTE:
+If you encounter installation issues with `bcrypt` you need to install [node-gyp](https://github.com/nodejs/node-gyp) first.
+If you update your node version to latest and you encountered compatibility issues:
+1. Ensure that there is no `pm2` runnign `pm2 list` (if there is kill the process)
+2. You have to rebuild your bcrypt running this command `npm rebuild bcrypt --update-binary`
+
 ## Docker support
 
 **Prerequisites**
