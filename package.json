@@ -80,7 +80,6 @@
     "coveralls": "3.0.3",
     "cz-conventional-changelog": "2.1.0",
     "docsify-cli": "4.3.0",
-    "electron-rebuild": "1.10.0",
     "istanbul": "1.1.0-alpha.1",
     "lint-staged": "8.1.5",
     "mocha": "6.1.4",
