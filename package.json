@@ -106,7 +106,8 @@
       "describe",
       "it",
       "config",
-      "beforeEach"
+      "beforeEach",
+      "afterEach"
     ]
   },
   "repository": {
