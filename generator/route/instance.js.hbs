@@ -1,0 +1,22 @@
+
+const container = require('src/container') // we have to get the DI
+const { get, post } = require('src/app/{{camelCase name}}')
+
+module.exports = () => {
+  const { {{#if InjectRepository}} repository: {
+    {{camelCase repositoryName}}
+  },   {{/if}} jwt } = container.cradle
+
+  const getUseCase = get({ {{#if InjectRepository}} {{camelCase repositoryName}},{{/if}} logger})
+  const postUseCase = post({  {{#if InjectRepository}} {{camelCase repositoryName}},{{/if}} logger})
+  const putUseCase = put({ {{#if InjectRepository}} {{camelCase repositoryName}},{{/if}} logger })
+  const deleteUseCase = remove({ {{#if InjectRepository}} {{camelCase repositoryName}},{{/if}} logger })
+
+
+  return {
+    getUseCase,
+    postUseCase,
+    putUseCase,
+    deleteUseCase
+  }
+}

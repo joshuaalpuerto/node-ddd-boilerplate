@@ -1,0 +1,28 @@
+ /**
+  * function for getter {{camelCase name}}.
+  */
+module.exports = ({ {{#if InjectRepository}} {{camelCase repositoryName}}, {{/if}}  logger }) => {
+  // code for getting all the items
+  const all = () => {
+    return Promise
+      .resolve()
+      .then(() =>
+      {{camelCase repositoryName}}.getAll({
+          attributes: [
+            'id', 'name', 'isActive'
+          ],
+         where: {
+           isActive: true
+         }
+        })
+      )
+      .catch(error => {
+         logger.error(error);
+        throw new Error(error)
+      })
+  }
+
+  return {
+    all
+  }
+}

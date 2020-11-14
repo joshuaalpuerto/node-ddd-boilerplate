@@ -1,0 +1,25 @@
+ /**
+  * function to delete {{camelCase name}}.
+  */
+module.exports = ({ {{#if InjectRepository}} {{camelCase repositoryName}}, {{/if}} logger }) => {
+  // code for getting all the items
+  const remove = ({ id }) => {
+    return Promise
+      .resolve()
+      .then(() =>
+      {{camelCase repositoryName}}.update({
+          isDeleted: true
+        }, {
+          where: { id }
+        })
+      )
+      .catch((error) => {
+         logger.error(error);
+        throw new Error(error)
+      })
+  }
+
+  return {
+    remove
+  }
+}
