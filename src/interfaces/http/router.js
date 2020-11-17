@@ -9,6 +9,7 @@ const { partialRight } = require("ramda");
 const controller = require("./utils/create_controller");
 const httpLogger = require("./middlewares/http_logger");
 const errorHandler = require("./middlewares/error_handler");
+const { UI } = require('bull-board')
 
 module.exports = ({ config, logger, database }) => {
   const router = Router();
@@ -49,6 +50,7 @@ module.exports = ({ config, logger, database }) => {
   apiRouter.use("/token", controller("token").router);
   apiRouter.use("/users", controller("user").router);
   apiRouter.use("/companies", controller("company").router);
+  apiRouter.use('/bull/dashboard', UI)
   /* PLOP_INJECT_ROUTE */
 
   router.use(`/api/${config.version}`, apiRouter);
