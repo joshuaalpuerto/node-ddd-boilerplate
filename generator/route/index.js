@@ -1,46 +1,63 @@
-'use strict';
-
-const path = require('path');
+"use strict";
 
 module.exports = {
-  description: 'Add action',
+  description: "Create route files",
   prompts: [
-  {
-    type: 'input',
-    name: 'name',
-    message: 'What should it be called?',
-    validate: (value) => {
-      if ((/.+/).test(value)) { return true; }
-      return 'name is required';
-    }
-  },
-  {
-    type: 'confirm',
-    name: 'wantReducer',
-    default: true,
-    message: 'Do you want to add a reducer?'
-  }],
+    {
+      type: "input",
+      name: "routeName",
+      message: "Name of the route",
+      validate: (value) => {
+        if (/.+/.test(value)) {
+          return true;
+        }
+        return "route is required";
+      },
+      description: "This is used in router.js",
+    },
+    {
+      type: "confirm",
+      name: "InjectRepository",
+      default: false,
+      message: "Would you inject repository in the methods?",
+    },
+    {
+      type: "input",
+      name: "repositoryName",
+      message: "Name of existing repository.",
+      description: "Only needed if previous answer was in affirmitive?",
+    },
+  ],
   actions: (data) => {
-    let actions = [];
-    const actionTemplate = path.resolve(__dirname, 'action.js.hbs');
+    // Generate index.js and index.test.js
+    let routeRelativePath = "src/interfaces/http/modules/{{camelCase name}}/";
 
-    actions.push({
-      type: 'add',
-      path: path.resolve(process.cwd(), 'src/actions/{{camelCase name}}Actions.js'),
-      templateFile: actionTemplate,
-      abortOnFail: true,
-    });
-
-    if (data.wantReducer) {
-      const reducerTemplate = path.resolve(__dirname, '../reducer/reducer.js.hbs');
-
-      actions.push({
-        type: 'add',
-        path: path.resolve(process.cwd(), 'src/reducers/{{camelCase name}}Reducer.js'),
-        templateFile: reducerTemplate,
+    const actions = [
+      {
+        type: "add",
+        path: `${routeRelativePath}index.js`,
+        templateFile: "generator/route/index.js.hbs",
         abortOnFail: true,
-      });
-    }
+      },
+      {
+        type: "add",
+        path: `${routeRelativePath}instance.js`,
+        templateFile: "generator/route/instance.js.hbs",
+        abortOnFail: true,
+      },
+      {
+        type: "add",
+        path: `${routeRelativePath}router.js`,
+        templateFile: "generator/route/router.js.hbs",
+        abortOnFail: true,
+      },
+      {
+        type: "append",
+        path: "src/interfaces/http/router.js",
+        pattern: `/* PLOP_INJECT_ROUTE */`,
+        template: `\t\tapiRouter.use('/{{camelCase routeName}}', controller('{{camelCase name}}').router);`,
+      },
+    ];
 
     return actions;
   },

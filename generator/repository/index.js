@@ -1,46 +1,37 @@
-'use strict';
-
-const path = require('path');
+"use strict";
 
 module.exports = {
-  description: 'Add reducer',
+  description: "Add reducer",
   prompts: [
-  {
-    type: 'input',
-    name: 'name',
-    message: 'What should it be called?',
-    validate: (value) => {
-      if ((/.+/).test(value)) { return true; }
-      return 'name is required';
-    }
-  },
-  {
-    type: 'confirm',
-    name: 'wantAction',
-    default: true,
-    message: 'Do you want to add an action?'
-  }],
+    {
+      type: "input",
+      name: "model",
+      message: "Model name for which to generate the repository?",
+      validate: (value) => {
+        if (/.+/.test(value)) {
+          return true;
+        }
+        return "model is required";
+      },
+    },
+  ],
   actions: (data) => {
-    let actions = [];
-    const reducerTemplate = path.resolve(__dirname, 'reducer.js.hbs');
+    let repositoryRelativePath = "src/infra/repositories/{{camelCase name}}/";
 
-    actions.push({
-      type: 'add',
-      path: path.resolve(process.cwd(), 'src/reducers/{{camelCase name}}Reducer.js'),
-      templateFile: reducerTemplate,
-      abortOnFail: true,
-    });
-
-    if (data.wantAction) {
-      const actionTemplate = path.resolve(__dirname, '../action/action.js.hbs');
-
-      actions.push({
-        type: 'add',
-        path: path.resolve(process.cwd(), 'src/actions/{{camelCase name}}Actions.js'),
-        templateFile: actionTemplate,
+    const actions = [
+      {
+        type: "add",
+        path: `${repositoryRelativePath}index.js`,
+        templateFile: "generator/repository/index.js.hbs",
         abortOnFail: true,
-      });
-    }
+      },
+      {
+        type: "add",
+        path: `${repositoryRelativePath}transform.js`,
+        templateFile: "generator/repository/transform.js.hbs",
+        abortOnFail: true,
+      },
+    ];
 
     return actions;
   },
