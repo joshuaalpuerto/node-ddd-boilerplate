@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-  description: "Add reducer",
+  description: "Add repository",
   prompts: [
     {
       type: "input",
