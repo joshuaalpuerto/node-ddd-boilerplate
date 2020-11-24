@@ -1,50 +1,35 @@
 var repeatDaily = (data) => {
-    var date = new Date(data)
-    var hour = date.getHours()
-    var minutes = date.getMinutes()
-    var day = date.getDate()
-    var month = date.getMonth() + 1
-    var year = date.getFullYear()
+    let date = new Date(data)
+    let hour = date.getHours()
+    let minutes = date.getMinutes()
     return `${minutes} ${hour} */1 */1 *`
 }
 var repeatWeekly = (data) => {
-    var date = new Date(data)
-    var hour = date.getHours()
-    var minutes = date.getMinutes()
-    var day = date.getDate()
-    var currentDay = date.getDay()
-    var month = date.getMonth() + 1
-    var year = date.getFullYear()
+    let date = new Date(data)
+    let hour = date.getHours()
+    let minutes = date.getMinutes()
+    let currentDay = date.getDay()
     return `${minutes} ${hour} * * */${currentDay}`
 }
 var repeatEveryMonth = (data) => {
-    var date = new Date(data)
-    var hour = date.getHours()
-    var minutes = date.getMinutes()
-    var day = date.getDate()
-    var month = date.getMonth() + 1
-    var year = date.getFullYear()
+    let date = new Date(data)
+    let hour = date.getHours()
+    let minutes = date.getMinutes()
+    let day = date.getDate()
     return `${minutes} ${hour} ${day} */1 *`
 }
 
 var repeatSevenDays = (data) => {
-    console.log(data);
-    var date = new Date(data)
-    var hour = date.getHours()
-    var minutes = date.getMinutes()
-    var day = date.getDate()
-    var month = date.getMonth() + 1
-    var year = date.getFullYear()
+    let date = new Date(data)
+    let hour = date.getHours()
+    let minutes = date.getMinutes()
     return `${minutes} ${hour} */1 */1 *`
 }
 
 var repeatFourteenDays = (data) => {
-    var date = new Date(data)
-    var hour = date.getHours()
-    var minutes = date.getMinutes()
-    var day = date.getDate()
-    var month = date.getMonth() + 1
-    var year = date.getFullYear()
+    let date = new Date(data)
+    let hour = date.getHours()
+    let minutes = date.getMinutes()
     return `${minutes} ${hour} */1 */1 *`
 }
 
