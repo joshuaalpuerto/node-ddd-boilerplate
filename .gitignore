@@ -12,3 +12,4 @@ postgres-data
 redis-data
 
 package-lock.json
+yarn.lock

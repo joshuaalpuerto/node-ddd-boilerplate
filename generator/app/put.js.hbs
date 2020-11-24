@@ -1,0 +1,26 @@
+const { {{pascalCase domainName}} } = require('src/domain/{{camelCase domainName}}')
+
+ /**
+  * function to update {{camelCase name}}.
+  */
+module.exports = ({ {{#if InjectRepository}} {{camelCase repositoryName}},{{/if}}  logger }) => {
+  // code for getting all the items
+  const update = ({ id, body }) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const obj = {{pascalCase domainName}}(body)
+        await {{camelCase repositoryName}}.update(obj, {
+          where: { id }
+        })
+
+        resolve(obj)
+      } catch (error) {
+         logger.error(error);
+        reject(error)
+      }
+    })
+  }
+  return {
+    update
+  }
+}

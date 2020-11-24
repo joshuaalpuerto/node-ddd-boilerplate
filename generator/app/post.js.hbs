@@ -1,0 +1,27 @@
+/**
+ * post use case functions for {{camelCase name}}.
+ */
+const { {{pascalCase domainName}} } = require('src/domain/{{camelCase domainName}}')
+
+ /**
+  * function for setter {{camelCase name}}.
+  */
+module.exports = ({ {{#if InjectRepository}} {{camelCase repositoryName}}, {{/if}} logger }) => {
+  // code for getting all the items
+  const create = ({body }) => {
+    return Promise
+      .resolve()
+      .then(() => {
+        const obj = {{pascalCase domainName}}(body);
+        return {{camelCase repositoryName}}.create(obj)
+      })
+      .catch((error) => {
+         logger.error(error);
+        throw new Error(error)
+      })
+  }
+
+  return {
+    create
+  }
+}
