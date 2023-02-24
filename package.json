@@ -66,7 +66,7 @@
     "pg": "7.8.1",
     "pm2": "3.5.1",
     "ramda": "0.26.1",
-    "sequelize": "5.21.1",
+    "sequelize": "6.29.0",
     "swagger-jsdoc": "3.2.9",
     "tcomb": "3.2.29",
     "winston": "3.2.1"
