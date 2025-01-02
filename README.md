@@ -13,8 +13,8 @@
 
 ## Development Environment Setup
 
-1.  Make sure you have `nvm`, node `v12.8.0` or `LTS` version of node installed
-2.  Install `yarn` - `npm install -g yarn`.
+1.  Make sure you have `nvm`, node latest `LTS` version of node installed
+2.  Install `pnpm` - `npm install -g pnpm`.
 3.  Use a smart `.npmrc`. By default, `npm` doesn’t save installed dependencies to package.json (and you should always track your dependencies!).
 
 ### NOTE:
