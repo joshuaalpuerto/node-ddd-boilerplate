@@ -11,6 +11,7 @@ module.exports = ({ server, database }) => {
       Promise
         .resolve()
         .then(database.authenticate)
+        .then(server.setupHealthCheck)
         .then(server.start)
   }
 }

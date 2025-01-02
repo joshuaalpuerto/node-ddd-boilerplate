@@ -1,6 +1,6 @@
 const express = require('express')
 
-module.exports = ({ config, router, logger, auth }) => {
+module.exports = ({ config, router, logger, auth, database, health }) => {
   const app = express()
 
   app.disable('x-powered-by')
@@ -12,11 +12,16 @@ module.exports = ({ config, router, logger, auth }) => {
 
   return {
     app,
-    start: () => new Promise((resolve) => {
-      const http = app.listen(config.port, () => {
-        const { port } = http.address()
-        logger.info(`🤘 API - Port ${port}`)
+    setupHealthCheck: () =>
+      new Promise(resolve => {
+        resolve(health.start(app))
+      }),
+    start: () =>
+      new Promise(resolve => {
+        const http = app.listen(config.port, () => {
+          const { port } = http.address()
+          logger.info(`🤘 API - Port ${port}`)
+        })
       })
-    })
   }
 }
