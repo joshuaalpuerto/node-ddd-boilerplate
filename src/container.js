@@ -11,6 +11,8 @@ const jwt = require('./infra/jwt')
 const response = require('./infra/support/response')
 const date = require('./infra/support/date')
 const repository = require('./infra/repositories')
+const eventPublisher = require('./infra/eventPublisher/publisher')
+const scheduler = require('./infra/bull')
 
 const container = createContainer()
 
@@ -27,7 +29,9 @@ container
     response: asFunction(response).singleton(),
     date: asFunction(date).singleton(),
     config: asValue(config),
-    repository: asFunction(repository).singleton()
+    repository: asFunction(repository).singleton(),
+    eventPublisher: asValue(eventPublisher),
+    scheduler: asFunction(scheduler).singleton()
   })
 
 module.exports = container
