@@ -12,6 +12,9 @@ importers:
 
   .:
     dependencies:
+      '@godaddy/terminus':
+        specifier: 4.3.1
+        version: 4.3.1
       awilix:
         specifier: 4.2.0
         version: 4.2.0
@@ -683,6 +686,9 @@ packages:
   '@colors/colors@1.6.0':
     resolution: {integrity: sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA==}
     engines: {node: '>=0.1.90'}
+
+  '@godaddy/terminus@4.3.1':
+    resolution: {integrity: sha512-zChILIprb4nWTGJ/pXafbGZqJA7yB6JzFQp5f8PBR5B0cJ6f9Nd40ySLFTBzko+PEZgVaJlKrJi5gUQLTI9dpw==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2440,6 +2446,9 @@ packages:
 
   es6-promisify@5.0.0:
     resolution: {integrity: sha512-C+d6UdsYDk0lMebHNR4S2NybQMMngAOnOwYBQjTOiv0MkoJMP0Myw2mgpDLBcpfCmRLxyFqYhS/CfOENq4SJhQ==}
+
+  es6-promisify@6.1.1:
+    resolution: {integrity: sha512-HBL8I3mIki5C1Cc9QjKUenHtnG0A5/xA8Q/AllRcfiwl2CZFXGK7ddBiCoRwAix4i2KxcQfjtIVcrVbB3vbmwg==}
 
   es6-symbol@3.1.4:
     resolution: {integrity: sha512-U9bFFjX8tFiATgtkJ1zg25+KviIXpgRvRHS8sau3GfhVzThRQrOeksPeT0BWW2MNZs1OEWJ1DPXOQMn0KKRkvg==}
@@ -6378,6 +6387,10 @@ packages:
     resolution: {integrity: sha512-ZnWpYnYugiOVEY5GkcuJK1io5V8QmNYChG62gSit9pQVGErXtrKuPC55ITaVSukmMta5qpMU7vqLt2Lnni4f/g==}
     engines: {node: '>=0.10.0'}
 
+  stoppable@1.1.0:
+    resolution: {integrity: sha512-KXDYZ9dszj6bzvnEMRYvxgeTHU74QBFL54XKtP3nyMuJ81CFYtABZ3bAzL2EdFUaEwJOBOgENyFj3R7oTzDyyw==}
+    engines: {node: '>=4', npm: '>=6'}
+
   stream-combiner2@1.1.1:
     resolution: {integrity: sha512-3PnJbYgS56AeWgtKF5jtJRT6uFJe56Z0Hc5Ngg/6sI6rIt8iiMBTa9cvdyFfpMQjaVHr8dusbNeFGIIonxOvKw==}
 
@@ -7939,6 +7952,11 @@ snapshots:
       '@babel/helper-validator-identifier': 7.25.9
 
   '@colors/colors@1.6.0': {}
+
+  '@godaddy/terminus@4.3.1':
+    dependencies:
+      es6-promisify: 6.1.1
+      stoppable: 1.1.0
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -10189,6 +10207,8 @@ snapshots:
   es6-promisify@5.0.0:
     dependencies:
       es6-promise: 4.2.8
+
+  es6-promisify@6.1.1: {}
 
   es6-symbol@3.1.4:
     dependencies:
@@ -14938,6 +14958,8 @@ snapshots:
   statuses@2.0.1: {}
 
   stealthy-require@1.1.1: {}
+
+  stoppable@1.1.0: {}
 
   stream-combiner2@1.1.1:
     dependencies:
