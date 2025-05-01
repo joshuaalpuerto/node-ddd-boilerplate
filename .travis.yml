@@ -2,10 +2,10 @@ language: node_js
 node_js:
  - "node"
 before_install:
- - npm install -g yarn
+ - npm install -g pnpm
  - psql -c 'create database node_ddd_test;' -U postgres
 install:
- - yarn
+ - pnpm install
 after_script:
  - npm run coveralls
 after_success:
