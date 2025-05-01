@@ -1,11 +1,12 @@
 const pm2 = require('pm2')
 
-const instances = process.env.WEB_CONCURRENCY || -1
+const instances = process.env.WEB_CONCURRENCY || 1
 const maxMemory = process.env.WEB_MEMORY || 512
 
 pm2.connect(() => {
   pm2.start({
     script: 'index.js',
+    name: 'node-ddd-api',
     instances: instances,
     max_memory_restart: `${maxMemory}M`,
     env: {
@@ -14,7 +15,8 @@ pm2.connect(() => {
     }
   }, (err) => {
     if (err) {
-      return console.error('Error while launching applications', err.stack || err)
+      console.error('Error while launching applications', err.stack || err)
+      return pm2.disconnect()
     }
 
     console.log('PM2 and application has been succesfully started')
