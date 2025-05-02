@@ -12,8 +12,8 @@ module.exports = ({ config, basePath }) => {
   )
 
   const db = {
-    sequelize,
-    Sequelize,
+    authenticate: () => sequelize.authenticate(),
+    close: () => sequelize.close(),
     models: {}
   }
 

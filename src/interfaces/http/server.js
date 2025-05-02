@@ -12,16 +12,11 @@ module.exports = ({ config, router, logger, auth, database, health }) => {
 
   return {
     app,
-    setupHealthCheck: () =>
-      new Promise(resolve => {
-        resolve(health.start(app))
-      }),
-    start: () =>
-      new Promise(resolve => {
-        const http = app.listen(config.port, () => {
-          const { port } = http.address()
-          logger.info(`🤘 API - Port ${port}`)
-        })
-      })
+    setupHealthCheck: () => health.start(app),
+    start: () => {
+      const http = app.listen(config.port, () => {
+        const { port } = http.address()
+        logger.info(`🤘 API - Port ${port}`)
+      })}
   }
 }

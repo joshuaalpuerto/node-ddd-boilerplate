@@ -8,10 +8,11 @@
 module.exports = ({ server, database }) => {
   return {
     start: () =>
-      Promise
-        .resolve()
-        .then(database.authenticate)
+        database.authenticate()
         .then(server.setupHealthCheck)
-        .then(server.start)
+        .then(server.start),
+    close: () =>
+        database.close()
+
   }
 }
