@@ -15,7 +15,7 @@ const deleteUseCase = remove({ companyRepository })
 
 module.exports = {
   getUseCase,
-  postUseCase ,
+  postUseCase,
   putUseCase,
   deleteUseCase
 }
