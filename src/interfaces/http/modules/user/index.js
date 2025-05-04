@@ -3,7 +3,7 @@ const router = require('./router')
 const instance = require('./instance')
 
 module.exports = () => {
-  const { logger, response: { Success, Fail }, auth } = container.cradle
+  const { logger, response: { Success, Fail }, auth } = container.resolve(['logger', 'response', 'auth'])
   const app = instance()
 
   return {

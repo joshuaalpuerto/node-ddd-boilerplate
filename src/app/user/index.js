@@ -4,9 +4,7 @@ const post = require('./post')
 const put = require('./put')
 const remove = require('./delete')
 
-const { repository: {
-  userRepository
-} } = container.cradle
+const { userRepository } = container.resolve('repository')
 
 const getUseCase = get({ userRepository })
 const postUseCase = post({ userRepository })
