@@ -1,11 +1,6 @@
 # Node DDD Boilerplate
 > RESTful api with Domain Driven Design
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/joshuaalpuerto/node-ddd-boilerplate.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/joshuaalpuerto/node-ddd-boilerplate/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/joshuaalpuerto/node-ddd-boilerplate.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/joshuaalpuerto/node-ddd-boilerplate/context:javascript)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-![Travis CI](https://travis-ci.org/joshuaalpuerto/node-ddd-boilerplate.svg?branch=master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 ![Dependecies](https://david-dm.org/joshuaalpuerto/node-ddd-boilerplate/status.svg)
 ![Dev Dependecies](https://david-dm.org/joshuaalpuerto/node-ddd-boilerplate/dev-status.svg)
