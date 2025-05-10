@@ -2,8 +2,6 @@
 > RESTful api with Domain Driven Design
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-![Dependecies](https://david-dm.org/joshuaalpuerto/node-ddd-boilerplate/status.svg)
-![Dev Dependecies](https://david-dm.org/joshuaalpuerto/node-ddd-boilerplate/dev-status.svg)
 [![Coverage Status](https://coveralls.io/repos/github/joshuaalpuerto/node-ddd-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/joshuaalpuerto/node-ddd-boilerplate?branch=master)
 
 ## Development Environment Setup
