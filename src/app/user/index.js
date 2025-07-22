@@ -1,3 +1,6 @@
+// This is a composition root, which basically bootstraps the company use-cases.
+// Thi is to ensure that we prevent misconfiguration of the use-cases.
+
 const container = require('src/container')
 const get = require('./get')
 const post = require('./post')
